@@ -1,5 +1,6 @@
 package com.expand.hucloud.common.utils;
 
+
 import javax.servlet.http.HttpServletRequest;
 
 /**

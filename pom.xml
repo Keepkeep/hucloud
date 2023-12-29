@@ -20,6 +20,7 @@
     <modules>
         <module>hucloud-api</module>
         <module>hucloud-common</module>
+        <module>hucloud-base</module>
         <module>hucloud-webs</module>
     </modules>
 
@@ -34,7 +35,6 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
-
     </dependencies>
     <dependencyManagement>
         <dependencies>

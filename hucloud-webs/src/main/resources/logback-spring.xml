@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/defaults.xml" />
+
+    <property name="FILE_LOG_PATTERN"
+              value="%green(%d{yyyy-MM-dd HH:mm:ss.SSS, Asia/Shanghai}) %boldMagenta([%t]) %highlight(%-5level) %cyan(%logger{50} [%file : %line] -) %msg%n"/>
+
+
+    <!--  控制台日志  -->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- encoder的默认实现类是ch.qos.logback.classic.encoder.PatternLayoutEncoder -->
+        <encoder>
+            <pattern>${FILE_LOG_PATTERN}</pattern>
+            <charset>UTF-8</charset>
+        </encoder>
+    </appender>
+
+    <root level="info">
+        <appender-ref ref="STDOUT" />
+    </root>
+
+    <logger name="STDOUT" level="INFO" additivity="false">
+        <appender-ref ref="STDOUT" />
+    </logger>
+
+
+</configuration>

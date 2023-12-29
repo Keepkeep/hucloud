@@ -1,0 +1,6 @@
+# 配置版本: 20231229，如有配置更新，需配置，必须修改配置版本
+spring:
+  profiles:
+    active: base,local
+
+

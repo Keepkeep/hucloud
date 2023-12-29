@@ -14,10 +14,25 @@ target/
 .sts4-cache
 
 ### IntelliJ IDEA ###
-.idea
+.idea/
 *.iws
 *.iml
 *.ipr
+vcs.xml
+misc.xml
+
+*.iws.data
+*.iws.iml.data
+*.iws.ipr.data
+*.iws.nb-gradle.xml
+*.iws.userprefs
+*.iws.xml
+*.iws.xml.data
+*.iws.xml.tmp
+*.iws.xml.tmp.data
+*.iws.xml.tmp.tmp
+*.iws.xml.tmp.tmp.data
+*.iws.xml.tmp.tmp.tmp
 
 ### NetBeans ###
 /nbproject/private/
