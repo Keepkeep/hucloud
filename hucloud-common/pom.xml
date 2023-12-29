@@ -127,6 +127,13 @@
         </dependency>
         <!--    hutool end    -->
 
+        <dependency>
+            <groupId>org.hibernate.validator</groupId>
+            <artifactId>hibernate-validator</artifactId>
+            <version>6.0.18.Final</version>
+            <scope>compile</scope>
+        </dependency>
+
 
     </dependencies>
 
