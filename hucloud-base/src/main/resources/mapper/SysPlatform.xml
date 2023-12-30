@@ -5,10 +5,10 @@
     <select id="pageList" resultType="com.expand.hucloud.common.entity.SysPlatformEntity">
         SELECT * FROM sys_platform WHERE 1=1
         <if test="sysPlatformRequstParams.platformName!= null and sysPlatformRequstParams.platformName!= '' ">
-            AND platform_name LIKE CONCAT('%',#{sysPlatformRequstParams.platformName},'%')
+            AND plat_name LIKE CONCAT('%',#{sysPlatformRequstParams.platformName},'%')
         </if>
         <if test="sysPlatformRequstParams.platformType!= null and sysPlatformRequstParams.platformType!= ''">
-            AND platform_type LIKE CONCAT('%',#{sysPlatformRequstParams.platformType},'%')
+            AND plat_type LIKE CONCAT('%',#{sysPlatformRequstParams.platformType},'%')
         </if>
     </select>
 </mapper>

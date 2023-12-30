@@ -4,6 +4,7 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Null;
 
 /**
  * @author hdq
@@ -12,7 +13,7 @@ import javax.validation.constraints.NotBlank;
 @Data
 public class SysPlatformRequstParams extends BaseRequestParams{
 
-    @NotBlank(message = "平台类型不能为空")
+    @Null(message = "平台类型不能为空")
     @ApiModelProperty(value = "平台类型")
     private String platformName;
 
