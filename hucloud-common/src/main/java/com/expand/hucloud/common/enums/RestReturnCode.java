@@ -29,8 +29,12 @@ public enum RestReturnCode implements IReturnCode {
     /**没有相关权限**/
     PERMISSION_FORBIDDEN(41005, "没有相关权限"),
     BUSINESS_OK(10000, "业务请求成功"),
-    /**数据库视图配置为空**/
-    PLAT_EMPTY(50001, "数据库视图配置为空！请联系上级平台相关人员。");
+
+    /**
+     * 格式错误!
+     */
+    FIELD_VALIDATE_ERROR(10002, "格式错误!"),
+    ;
 
     private Integer code;
     private String message;
