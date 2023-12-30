@@ -172,6 +172,19 @@
         </dependency>
 
         <!-- lombok end       -->
+        <!--   kafka start     -->
+        <dependency>
+            <groupId>org.springframework.kafka</groupId>
+            <artifactId>spring-kafka</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-api</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!--   kafka end     -->
+
     </dependencies>
 
 
