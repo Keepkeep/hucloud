@@ -2,8 +2,11 @@ package com.expand.hucloud.common.exception;
 
 
 import com.expand.hucloud.common.enums.RestReturnCode;
+import com.expand.hucloud.common.event.ExceptionLogEvent;
 import com.expand.hucloud.common.response.AppResult;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.http.HttpStatus;
 import org.springframework.validation.BindException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -22,6 +25,8 @@ import javax.servlet.http.HttpServletResponse;
 @RestControllerAdvice(basePackages = {"com.expand"})
 @Slf4j
 public class AccessExceptionHandler {
+    @Autowired
+    private ApplicationEventPublisher applicationEventPublisher;
 
     @ExceptionHandler(value = AccessException.class)
     @ResponseStatus(HttpStatus.OK)
@@ -32,6 +37,10 @@ public class AccessExceptionHandler {
         appResult.setBusinessCode(String.valueOf(e.getCode()));
         appResult.setOpDesc(e.getMessage());
         appResult.setCode(1);
+
+        //异步日志
+        applicationEventPublisher.publishEvent(new ExceptionLogEvent(this,e,appResult));
+
         return appResult;
     }
 
